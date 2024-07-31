@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacode App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <img src="logo.png" alt="Hacode Logo" class="logo">
+        <h1>Hacode </h1>
+        <div class="input-group">
+            <label for="text-input">Enter Text:</label>
+            <textarea id="text-input" class="text-area"></textarea>
+        </div>
+        <div class="select-group">
+            <label for="algorithm-spinner">Select Algorithm:</label>
+            <select id="algorithm-spinner">
+                <option value="AES">AES</option>
+                <option value="Caesar Cipher">Caesar Cipher</option>
+                <option value="Vigenère Cipher">Vigenère Cipher</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="key-input">Key:</label>
+            <input type="text" id="key-input">
+        </div>
+        <div class="button-group">
+            <button class="generate-btn" onclick="generateKey()">Generate Key</button>
+        </div>
+        <div class="button-group">
+            <button class="action-btn" onclick="encryptMessage()">Encrypt</button>
+            <button class="action-btn" onclick="decryptMessage()">Decrypt</button>
+        </div>
+        <div class="input-group">
+            <label for="encrypted-text-input">Encrypted Text:</label>
+            <textarea id="encrypted-text-input" class="text-area" readonly></textarea>
+        </div>
+        <div class="button-group">
+            <button class="copy-btn" onclick="copyEncryptedMessage()">Copy Encrypted Text</button>
+        </div>
+        <div class="input-group">
+            <label for="decrypted-text-input">Decrypted Text:</label>
+            <textarea id="decrypted-text-input" class="text-area" readonly></textarea>
+        </div>
+        <div class="button-group">
+            <button class="copy-btn" onclick="copyDecryptedMessage()">Copy Decrypted Text</button>
+        </div>
+        <div class="file-group">
+            <label for="file-input">Select File:</label>
+            <input type="file" id="file-input" style="display:none;">
+            <button class="file-btn" onclick="selectFile()">Choose File</button>
+            <p id="file-status">No file selected.</p>
+        </div>
+        <div class="button-group">
+            <button class="action-btn" onclick="encryptFile()">Encrypt File</button>
+            <button class="action-btn" onclick="decryptFile()">Decrypt File</button>
+        </div>
+        <div class="switch-group">
+            <label for="dark-mode-switch">Toggle Dark/Light Mode:</label>
+            <input type="checkbox" id="dark-mode-switch">
+        </div>
+    </div>
+</body>
+</html>
